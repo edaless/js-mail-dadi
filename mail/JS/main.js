@@ -7,33 +7,53 @@
 
 
 const lista = ["toto1@africa.it", "toto2@africa.it", "toto3@africa.it", "toto4@africa.it", "toto5@africa.it", "qualcuno@gmail.it", "totorina@camorra.it"];
+const risposta = document.getElementById("risposta");
 
 
-const miaMail = prompt("Qual è la tua mail");
-console.log("Mail immessa: " + miaMail);
+// const miaMail = prompt("Qual è la tua mail");
 
 let presenza = 0;
 
+const tasto = document.querySelector("button");
 
-for(let i = 0; i < lista.length; i++){
-    // console.log("mail: " + lista[i]);
-    if (lista[i] === miaMail){
-        presenza++;
+tasto.addEventListener("click",
+    function(){
+        let miaMail = document.querySelector("input").value;
+        console.log("Mail immessa: " + miaMail);
+
         
-    };
+        for(let i = 0; i < lista.length; i++){
+            // console.log("mail: " + lista[i]);
+            if (lista[i] === miaMail){
+                presenza++;
+                
+            };
 
-};
+        };
 
-if (presenza === 0){
-    console.log("NON presente");
+        if (presenza === 0){
+            risposta.innerHTML = 
+            `NON SEI INVITATO, \n
+            e vai tra che c'è un motivo`;
+            console.log("NON presente");
 
-}else if (presenza === 1){
-    console.log("Presente!");
+        }else if (presenza === 1){
+            risposta.innerHTML = "HELL YEAH!!! Ti aspetto ;)";
+            console.log("Presente!");
 
-}else {
-    console.log("ERRORE");
+        }else {
+            console.log("ERRORE");
 
-};
+        };
+
+        presenza = 0;
+        document.querySelector("input").value = null;
+
+    }
+
+);
+
+
 
 
 
