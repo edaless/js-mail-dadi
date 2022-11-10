@@ -6,22 +6,34 @@
 
 
 
-const arrMail = ["toto1@africa.it", "toto2@africa.it", "toto3@africa.it", "toto4@africa.it", "toto5@africa.it", "qualcuno@gmail.it", "totorina@camorra.it"];
+const lista = ["toto1@africa.it", "toto2@africa.it", "toto3@africa.it", "toto4@africa.it", "toto5@africa.it", "qualcuno@gmail.it", "totorina@camorra.it"];
 
 
 const miaMail = prompt("Qual è la tua mail");
+console.log("Mail immessa: " + miaMail);
+
+let presenza = 0;
 
 
-for(let i = 0; i < arrMail.length; i++){
-    console.log("mail:" + arrMail[i]);
-    if (arrMail[i] === miaMail){
-        console.log("presente");
+for(let i = 0; i < lista.length; i++){
+    // console.log("mail: " + lista[i]);
+    if (lista[i] === miaMail){
+        presenza++;
         
     };
 
 };
 
+if (presenza === 0){
+    console.log("NON presente");
 
+}else if (presenza === 1){
+    console.log("Presente!");
+
+}else {
+    console.log("ERRORE");
+
+};
 
 
 
